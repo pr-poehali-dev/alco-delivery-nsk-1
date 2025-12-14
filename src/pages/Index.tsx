@@ -23,11 +23,13 @@ const Index = () => {
       if (age - 1 >= 18) {
         setIsAgeVerified(true);
         setShowVerification(false);
+        window.open('https://t.me/jinkotik_bot/order', '_blank');
       }
     } else {
       if (age >= 18) {
         setIsAgeVerified(true);
         setShowVerification(false);
+        window.open('https://t.me/jinkotik_bot/order', '_blank');
       }
     }
   };
