@@ -250,37 +250,39 @@ const Index = () => {
         </div>
       </footer>
 
-      <Dialog open={showVerification && !isAgeVerified} onOpenChange={setShowVerification}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">Верификация возраста</DialogTitle>
-            <DialogDescription className="text-base">
-              Для оформления заказа необходимо подтвердить, что вам исполнилось 18 лет
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-4 py-4">
-            <div className="space-y-2">
-              <Label htmlFor="birthdate">Дата рождения</Label>
-              <Input
-                id="birthdate"
-                type="date"
-                value={birthDate}
-                onChange={(e) => setBirthDate(e.target.value)}
-                max={new Date().toISOString().split('T')[0]}
-              />
+{showVerification && !isAgeVerified && (
+        <Dialog open={true} onOpenChange={setShowVerification}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-2xl">Верификация возраста</DialogTitle>
+              <DialogDescription className="text-base">
+                Для оформления заказа необходимо подтвердить, что вам исполнилось 18 лет
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-4">
+              <div className="space-y-2">
+                <Label htmlFor="birthdate">Дата рождения</Label>
+                <Input
+                  id="birthdate"
+                  type="date"
+                  value={birthDate}
+                  onChange={(e) => setBirthDate(e.target.value)}
+                  max={new Date().toISOString().split('T')[0]}
+                />
+              </div>
             </div>
-          </div>
-          <DialogFooter>
-            <Button 
-              onClick={handleVerification}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-              disabled={!birthDate}
-            >
-              Подтвердить возраст
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+            <DialogFooter>
+              <Button 
+                onClick={handleVerification}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                disabled={!birthDate}
+              >
+                Подтвердить возраст
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )}
 
       {isAgeVerified && (
         <div className="fixed bottom-6 right-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg shadow-xl animate-scale-in">
