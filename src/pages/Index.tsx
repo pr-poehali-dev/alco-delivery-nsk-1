@@ -23,13 +23,13 @@ const Index = () => {
       if (age - 1 >= 18) {
         setIsAgeVerified(true);
         setShowVerification(false);
-        window.open('https://t.me/jinkotik_bot/order', '_blank');
+        window.open('https://app.botmag.net/store/e4e9b3fd-80b5-4d28-a76a-7c5890974c70', '_blank');
       }
     } else {
       if (age >= 18) {
         setIsAgeVerified(true);
         setShowVerification(false);
-        window.open('https://t.me/jinkotik_bot/order', '_blank');
+        window.open('https://app.botmag.net/store/e4e9b3fd-80b5-4d28-a76a-7c5890974c70', '_blank');
       }
     }
   };
